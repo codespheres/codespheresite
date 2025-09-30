@@ -1,56 +1,56 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Welcome to your Lovable project
+# Code Spheres - Fast, Reliable Internet
 
-## Project info
+## About This Project
 
-**URL**: https://lovable.dev/projects/f8430002-43f9-402c-acc9-2338170bf9dd
+Code Spheres is a modern fiber internet provider website built with React, TypeScript, and Tailwind CSS. The website features a sleek dark theme with neon orange accents and provides information about fiber internet services.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- ⚡ **High-Speed Fiber Internet Plans**
+- 📞 **24/7 Customer Support: +1(877) 654-9321**
+- 🎨 **Modern Dark Theme with Glass Morphism Effects**
+- 📱 **Fully Responsive Design**
+- 🚀 **Optimized Performance**
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f8430002-43f9-402c-acc9-2338170bf9dd) and start prompting.
+- **Frontend**: React 18 + TypeScript
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: shadcn/ui components
+- **Build Tool**: Vite
+- **Deployment**: GitHub Pages with GitHub Actions
 
-Changes made via Lovable will be committed automatically to this repo.
+## Development
 
-**Use your preferred IDE**
+```bash
+# Install dependencies
+npm install
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The website is automatically deployed to GitHub Pages when changes are pushed to the main branch.
 
-**Use GitHub Codespaces**
+**Live Website**: https://codespheres.github.io/codespheresite/
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Contact Information
+
+- **Phone**: +1(877) 654-9321
+- **Website**: https://codespheres.com
+- **Support**: Available 24/7
+
+---
+
+Built with ❤️ for fast, reliable internet connectivity.
 
 ## What technologies are used for this project?
 
