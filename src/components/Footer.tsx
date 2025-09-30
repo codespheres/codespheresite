@@ -1,8 +1,7 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
-const FooterComponent = () => {
+const Footer = () => {
   const currentYear = new Date().getFullYear();
-  // Force rebuild: 2025-09-30 15:45
 
   const footerLinks = {
     services: [
@@ -186,4 +185,4 @@ const FooterComponent = () => {
   );
 };
 
-export default FooterComponent;
+export default Footer;
