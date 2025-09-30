@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* Code Spheres Design System - Dark Onyx with Neon Orange */
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --onyx-base: 220 14% 4%;
+    --onyx-light: 220 12% 8%;
+    --onyx-lighter: 220 10% 12%;
+    
+    /* Neon Orange Gradient */
+    --neon-orange: 24 100% 55%;
+    --neon-orange-light: 32 100% 62%;
+    --neon-orange-glow: 24 100% 55%;
+    
+    /* Violet Accents */
+    --violet-rim: 236 100% 65%;
+    --violet-glow: 236 100% 70%;
+    
+    /* Glass & Effects */
+    --glass-bg: 220 14% 6%;
+    --glass-border: 220 30% 20%;
+    --glass-highlight: 0 0% 100%;
+    
+    /* Text Colors */
+    --text-primary: 0 0% 98%;
+    --text-secondary: 0 0% 80%;
+    --text-muted: 0 0% 60%;
+    --text-amber: 45 100% 75%;
+    
+    /* Semantic Mappings */
+    --background: var(--onyx-base);
+    --foreground: var(--text-primary);
+    --card: var(--glass-bg);
+    --card-foreground: var(--text-primary);
+    --popover: var(--onyx-light);
+    --popover-foreground: var(--text-primary);
+    --primary: var(--neon-orange);
+    --primary-foreground: var(--onyx-base);
+    --secondary: var(--onyx-lighter);
+    --secondary-foreground: var(--text-primary);
+    --muted: var(--onyx-lighter);
+    --muted-foreground: var(--text-muted);
+    --accent: var(--violet-rim);
+    --accent-foreground: var(--text-primary);
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--text-primary);
+    --border: var(--glass-border);
+    --input: var(--onyx-lighter);
+    --ring: var(--neon-orange);
+    --radius: 1.375rem;
+    
+    /* Custom Gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(var(--neon-orange)), hsl(var(--neon-orange-light)));
+    --gradient-glass: linear-gradient(135deg, 
+      hsla(var(--glass-highlight), 0.05) 0%, 
+      hsla(var(--glass-highlight), 0.02) 100%);
+    --gradient-orb: radial-gradient(circle at 30% 40%, 
+      hsla(var(--neon-orange), 0.3) 0%, 
+      hsla(var(--violet-rim), 0.2) 50%, 
+      transparent 70%);
+    
+    /* Shadows & Glows */
+    --shadow-glass: 
+      0 8px 32px hsla(var(--onyx-base), 0.8),
+      inset 0 1px 0 hsla(var(--glass-highlight), 0.1);
+    --shadow-neon: 0 0 20px hsla(var(--neon-orange), 0.5);
+    --shadow-violet: 0 0 15px hsla(var(--violet-rim), 0.4);
+    --glow-neon: drop-shadow(0 0 10px hsla(var(--neon-orange), 0.6));
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsla(var(--neon-orange), 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsla(var(--violet-rim), 0.08) 0%, transparent 50%);
+  }
+  
+  /* Preloader */
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: hsl(var(--onyx-base));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .preloader.fade-out {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  
+  /* Orbiting Spheres Animation */
+  .orbit-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+  }
+  
+  .orbit {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid hsla(var(--neon-orange), 0.3);
+  }
+  
+  .orbit-1 { width: 60px; height: 60px; animation: orbit 2s linear infinite; }
+  .orbit-2 { width: 90px; height: 90px; animation: orbit 3s linear infinite reverse; }
+  .orbit-3 { width: 120px; height: 120px; animation: orbit 4s linear infinite; }
+  
+  .sphere {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gradient-neon);
+    box-shadow: var(--shadow-neon);
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  @keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    width: 200px;
+    height: 2px;
+    background: hsla(var(--glass-highlight), 0.1);
+    border-radius: 1px;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background: var(--gradient-neon);
+    width: 0%;
+    transition: width 0.1s ease;
+  }
+  
+  /* Glass Card Base */
+  .glass-card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(var(--glass-highlight), 0.1);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-glass);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      hsla(var(--glass-highlight), 0.3) 50%, 
+      transparent 100%);
+  }
+  
+  /* Neon Button Base */
+  .neon-button {
+    background: var(--gradient-neon);
+    border: none;
+    border-radius: 50px;
+    color: hsl(var(--onyx-base));
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .neon-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-neon), 0 8px 25px hsla(var(--onyx-base), 0.3);
+  }
+  
+  .neon-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      hsla(var(--glass-highlight), 0.4), 
+      transparent);
+    transition: left 0.5s ease;
+  }
+  
+  .neon-button:hover::before {
+    left: 100%;
+  }
+  
+  /* Scroll Animations */
+  .animate-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+  
+  .animate-fade-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Back to Top */
+  .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-neon);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    opacity: 0;
+    transform: translateY(20px);
+    z-index: 1000;
+  }
+  
+  .back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .back-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: var(--shadow-neon);
+  }
+
+  @keyframes scroll-x {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-scroll-x {
+    animation: scroll-x 30s linear infinite;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
