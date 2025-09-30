@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Welcome to your Lovable project
 
 ## Project info
@@ -90,3 +91,6 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 >>>>>>> c9f432fe612eb8f0a1f01c80f983778c7a3e13ca
+=======
+# codespheresite
+>>>>>>> c7e4880fe21e992f277e721dba5bf076088046c1
